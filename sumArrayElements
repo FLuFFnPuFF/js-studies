@@ -1,0 +1,19 @@
+<script>
+  
+  const numberArray = [1, 2, 3, 4, 5];
+
+  const index = numberArray.length - 1;
+
+  console.log(sum(numberArray, index));
+
+  function sum(array, index) {
+
+    if (index === 0) {
+      return array[0];
+    }
+
+    return array[index] + sum(array, index - 1);
+
+  }
+  
+  </script>
