@@ -1,0 +1,58 @@
+<script>
+    /*  Create a function that takes an array of strings 
+        as input and returns a new array with the lengths 
+        of those strings. For example, if the input is 
+        ["apple", "banana", "kiwi"], the function should 
+        return [5, 6, 4].
+        
+        Pseudocode
+            -String inputs
+                -We need a some variables
+                    -word
+                    -lengths
+                    -number of inputs
+                -I want the input texts to be viewable, so we
+                save the values in an array
+            -Input length
+                -To get the length, I'm planning to get the 
+                word with the current index, assigning it to a 
+                variable, then get its length
+            -output
+                -We just list the arrays
+    */
+
+let wordList = [];
+let wordLengthList = [];
+let currentWordLength = [];
+
+const numberOfWordInputs = 3;
+
+// Function Calls
+    wordInputs();
+
+// Word inputs loop based on the variable numberOfWordInputs
+function wordInputs(){
+    
+    // Define variables to use in this function
+    let currentWord;
+
+    for(i = 0; i < numberOfWordInputs; i++){
+
+        wordList[i] = prompt("Input a word");
+        currentWord = wordList[i];
+        currentWordLength[i] = currentWord.length;
+        
+        //console.log(currentWordLength[i]);
+
+    }
+
+    return currentWordLength;
+
+}
+
+alert(currentWordLength);
+
+
+
+
+</script>

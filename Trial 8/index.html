@@ -1,0 +1,35 @@
+<script> 
+/*
+
+    Write a function that generates and returns an array of random numbers between a given range. The function should take the minimum and maximum numbers 
+    as parameters.
+
+*/
+
+// Takes the minimum and maximum numbers as inputs
+
+let numberOfOutputsInArray = 5;
+let numberArray = [];
+
+
+let minimumNumber = prompt("Input the minimum number input"); 
+let maximumNumber = prompt("Input the maximum number input");
+
+
+// for(let i = 0; i < numberOfOutputsInArray; i++){
+
+//     numberArray.push(randomNumberArrayGenerator(minimumNumber, maximumNumber));
+
+// }
+
+function randomNumberArrayGenerator(min, max){
+
+    // Math.floor() here rounds down the number to the nearest integer
+    // Math.random() returns a value less than 1
+    return Math.floor(Math.random() * (max - min) + 1) + min;
+
+}
+
+alert(randomNumberArrayGenerator(minimumNumber, maximumNumber));
+
+</script>

@@ -1,0 +1,88 @@
+<script>
+
+/* Implement a function that checks if a given word is a 
+palindrome. A palindrome is a word that reads the same 
+backward as forward.
+*/
+
+/* PS
+    - Ask for input, lowercase the input
+        -We only need this input once, it can be const
+    - We feed the letters of a word into an array
+        -We need 2 arrays
+    - Through a loop, we feed the letters of the first array
+        into another, starting at the end.
+    - compare if the two arrays are equal
+        -isPalindrome boolean;
+
+*/
+
+let isPalindrome = false;
+let wordInput = prompt("What word would you like to check is a palindrome?"); 
+
+wordInput = wordInput.toLowerCase();
+
+let letterArray1 = Array.from(wordInput);
+let letterArray2 = [];
+
+// FUNCTION CALLS
+
+letterArray2 = reverseArray(letterArray1, letterArray2);
+isPalindrome = arrayElementTest(letterArray1, letterArray2);
+
+// This function gets the value of the first array, reverses it, and assigns the value to the other array
+
+function reverseArray(array1, array2)
+{
+
+    for(let i = wordInput.length - 1, j = 0; i >= 0; i--, j++){
+    
+        letterArray2[j] = letterArray1[i];
+        // console.log("I is currently " + i);
+        // console.log("J is currently " + j);
+    }
+
+    return letterArray2;
+
+}
+
+// This tests if the two arrays are equal, outputs true or false
+
+function arrayElementTest(array1, array2)
+{
+
+    if(array1.length !== array2.length){
+
+        return false;
+
+    }
+
+    for(let i = 0; i < letterArray1.length; i++){
+
+        if(array1[i] !== array2[i])
+        {
+            return false;
+        }
+
+    }
+
+    return true;
+
+}
+
+// Text output 
+if (isPalindrome == true) {
+
+    console.log("The word " + wordInput + " is a palindrome");
+
+}
+
+else {
+    
+    console.log("The word " + wordInput +" is not a palindrome");
+
+}
+
+// end
+
+</script>
